@@ -3,6 +3,12 @@ const button = document.getElementById('button');
 const listEmail = document.getElementById('listEmail');
 
 // mi dichiaro le variabili che mi servono
-const endpoint = 'https://flynn.boolean.careers/exercises/api/random/mail?items=10'
+const endpoint = 'https://flynn.boolean.careers/exercises/api/random/mail';
 
-// svolgo la chiamata ajax per interrogare l`endpoint
+// ciclo for che mi crea 10 email 
+for (let i = 0; i < 10; i++) {
+    axios.get(endpoint).then( res => {
+        const emails = res.data.response;
+        console.log(emails);
+    })
+}
